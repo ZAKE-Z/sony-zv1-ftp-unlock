@@ -1,0 +1,57 @@
+{
+  "firmware": {
+    "a7iii_401": {
+      "camera": "Sony a7 III (ILCE-7M3)",
+      "version": "4.01",
+      "model_id": "0x71030014",
+      "filename": "Update_ILCE7M3V401.exe",
+      "url": "https://di.update.sony.net/IMT/Update_ILCE7M3V401.exe",
+      "exe_sha256": "ff33440ddf27d9eb6c5869789d396dce7401e8529d84b800c8fd8dd13ef6568f"
+    },
+    "a7c_200": {
+      "camera": "Sony a7C (ILCE-7C)",
+      "version": "2.00",
+      "model_id": "0x91030019",
+      "filename": "Update_ILCE7CV200.exe",
+      "url": "https://di.update.sony.net/IMT/Update_ILCE7CV200.exe",
+      "exe_sha256": "801af0faed88ede1d46402297bf8e94b35ccb8fecd83d4b6b350c24cccaa5ce9"
+    }
+  },
+  "libraries": {
+    "libInfraFtpClient.so": {
+      "firmware": "a7iii_401",
+      "source_names": [
+        "libInfraFtpClient.so"
+      ],
+      "source_sha256": "fca2f728cc5345099cf0d6bc6e60c785d0669d5cd26608e0c6eec6059e34a0df",
+      "final_sha256": "ffaee2b2cd4ae857690068d2a858d76d0f92614739cbb6a6e1d1f3a069a8c6a4",
+      "patch_plan": "resources/patches/ftp_client.json"
+    },
+    "libInfraCertificate.so": {
+      "firmware": "a7c_200",
+      "source_names": [
+        "libInfraCertificate.so"
+      ],
+      "source_sha256": "f7de1cf959a8fcf5e027ad2c50863fe5cffa8198a0e567b2d4fd4e78f6b6f9a2",
+      "final_sha256": "f7de1cf959a8fcf5e027ad2c50863fe5cffa8198a0e567b2d4fd4e78f6b6f9a2"
+    },
+    "libcurl.so.4": {
+      "firmware": "a7c_200",
+      "source_names": [
+        "libcurl.so.4.7.0"
+      ],
+      "source_sha256": "aaedea2eedbd600c6ba0e0df5ba288aaa241f8bf256c04035356e9f4adddf77a",
+      "final_sha256": "aaedea2eedbd600c6ba0e0df5ba288aaa241f8bf256c04035356e9f4adddf77a"
+    },
+    "libssh2.so.1": {
+      "firmware": "a7c_200",
+      "source_names": [
+        "libssh2.so.1.0.1"
+      ],
+      "source_sha256": "fe9a7387fe87c39c371ed1137051081b1932cdf8072540e65e1cd243483fa1bd",
+      "final_sha256": "fe9a7387fe87c39c371ed1137051081b1932cdf8072540e65e1cd243483fa1bd"
+    }
+  },
+  "certificate_also_identical_in": "a7iii_401",
+  "ssh2_also_identical_in": "a7iii_401"
+}

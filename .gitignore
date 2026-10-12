@@ -1,0 +1,17 @@
+ftp_config.json
+logs/
+backups/
+*.private
+*.private.log
+**/*.private/
+assets/*.so*
+assets/extraction.private.json
+firmware/*
+!firmware/README.md
+runtime/
+site-packages/
+__pycache__/
+*.pyc
+.venv/
+dist/
+逆向资料/

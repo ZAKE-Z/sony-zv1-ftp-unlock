@@ -1,0 +1,91 @@
+{
+  "original_sha256": "fca2f728cc5345099cf0d6bc6e60c785d0669d5cd26608e0c6eec6059e34a0df",
+  "candidate_sha256": "ffaee2b2cd4ae857690068d2a858d76d0f92614739cbb6a6e1d1f3a069a8c6a4",
+  "patches": [
+    {
+      "offset": "0x14dd8",
+      "old": "30",
+      "new": "00"
+    },
+    {
+      "offset": "0x14de4",
+      "old": "fb",
+      "new": "fa"
+    },
+    {
+      "offset": "0x14de6",
+      "old": "cee8",
+      "new": "22ef"
+    },
+    {
+      "offset": "0x14dea",
+      "old": "30",
+      "new": "00"
+    },
+    {
+      "offset": "0x14df0",
+      "old": "fb",
+      "new": "fa"
+    },
+    {
+      "offset": "0x14df2",
+      "old": "c8e8",
+      "new": "1cef"
+    },
+    {
+      "offset": "0x14ea8",
+      "old": "272008210522b123",
+      "new": "0346272000219222"
+    },
+    {
+      "offset": "0x1611e",
+      "old": "32ef",
+      "new": "86ed"
+    },
+    {
+      "offset": "0x1a79c",
+      "old": "08210922db23",
+      "new": "0b4600219122"
+    },
+    {
+      "offset": "0x1a9a4",
+      "old": "00258180",
+      "new": "6f460446"
+    },
+    {
+      "offset": "0x1a9a9",
+      "old": "af4ff0ff310261436100220023",
+      "new": "216022f5f748ea82b04ff48005"
+    },
+    {
+      "offset": "0x1a9b7",
+      "old": "6081600446c1608561c0e90823856280f85850",
+      "new": "f5805500230193db4300930020294603222223"
+    },
+    {
+      "offset": "0x1a9cc",
+      "old": "0eed28b12560272008210922382314e0",
+      "new": "d4eb02b0b0f1ff3f0bd0a061a5620430"
+    },
+    {
+      "offset": "0x1a9dd",
+      "old": "46f6f726e860b92046f5f708ea20b1272008210922422307e0012384f8583005e02720082109224c23f5f712e92046b0bd",
+      "new": "632064a5f58055a5632565012084f858002046b0bd00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf"
+    },
+    {
+      "offset": "0x1aa98",
+      "old": "002380f8583000af036804463bb1f5f7f8eb2046f5f7c4e82046f4f756ee204698bd",
+      "new": "6f460446a06910b1a16af5f764ef0023a36184f85830204698bd00bf00bf00bf00bf"
+    },
+    {
+      "offset": "0x1abda",
+      "old": "d4e9",
+      "new": "28e8"
+    },
+    {
+      "offset": "0x1c40c",
+      "old": "14",
+      "new": "05"
+    }
+  ]
+}

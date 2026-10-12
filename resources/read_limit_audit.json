@@ -1,0 +1,59 @@
+{
+  "status": "PASS_READ_LIMIT_AUDIT",
+  "camera_operations": false,
+  "github_upload_performed": false,
+  "native_modules": {
+    "limit_bytes": 67108864,
+    "observed_backup_sizes": {
+      "CautionConfig.so": 16453532,
+      "libObj.so": 21337808,
+      "viewUnified2.so": 13572428,
+      "viewUnified4.so": 3200544
+    }
+  },
+  "restore_dependencies": {
+    "limit_bytes": 1048576,
+    "expected_sizes": {
+      "libInfraFtpClient.so": 130988,
+      "libcurl.so.4": 364820,
+      "libssh2.so.1": 114004,
+      "libInfraCertificate.so": 12420
+    }
+  },
+  "patch_helpers": {
+    "limit": "actual helper size + 1024",
+    "actual_sizes": {
+      "auto_obj_native.elf": 4164,
+      "auto_view_native.elf": 3424,
+      "menu_native.elf": 4852,
+      "menu_tvonly.elf": 4708,
+      "menu_a581.elf": 4708,
+      "menu_reader.elf": 4212,
+      "menu_owned.elf": 3552,
+      "bounded_input.elf": 4660
+    }
+  },
+  "config_cipher": {
+    "expected_bytes": 4636,
+    "limit_bytes": 5660,
+    "old_limit_65536_removed": true
+  },
+  "cipher_batch": {
+    "expected_bytes": 1024,
+    "limit_bytes": 2048
+  },
+  "version_record": {
+    "expected_bytes": 2,
+    "limit_bytes": 4096
+  },
+  "version_string": {
+    "limit_bytes": 65536,
+    "expected": "short exact firmware string"
+  },
+  "legacy_mwf_diagnostic": {
+    "limit_bytes": 2097152,
+    "observed_max": 247740
+  },
+  "firmware_extraction": "local EXE/archive reads; 4 MiB hash chunk is not a whole-file size cap",
+  "new_same_class_defects_found": 0
+}

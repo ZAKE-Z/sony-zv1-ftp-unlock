@@ -1,0 +1,658 @@
+{
+  "scope": "FTP category 0x1ac plus known FTP global switches/selection/cache; excludes runtime pointer 0x1071cd7, Wi-Fi and USB settings",
+  "properties": {
+    "0x1071c48": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1071c49": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1071c4a": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1071c4d": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1071cd6": {
+      "bytes": 8000,
+      "nonzero": [
+        [
+          32,
+          1
+        ]
+      ]
+    },
+    "0x1ac0000": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0001": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0002": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0003": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac0004": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac0005": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0006": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0007": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0008": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0009": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac000a": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac000b": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac000c": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac000d": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac000e": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac000f": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac0010": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac0011": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0012": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0013": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0014": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0015": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0016": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0017": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0018": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0019": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac001a": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac001b": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac001c": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac001d": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac001e": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac001f": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0020": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0021": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0022": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0023": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0024": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0025": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0026": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0027": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0028": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac0029": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac002a": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac002b": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac002c": {
+      "bytes": 128,
+      "nonzero": []
+    },
+    "0x1ac003f": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0040": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0041": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0042": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac0043": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac0044": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0049": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac004a": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac004b": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac004c": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac004d": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac004e": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0053": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0054": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0055": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0056": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac0057": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac0058": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac005d": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac005e": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac005f": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0060": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac0061": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac0062": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0067": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0068": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0069": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac006a": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac006b": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac006c": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0071": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0072": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0073": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0074": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac0075": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac0076": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0077": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0078": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0079": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac007a": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac007b": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac007c": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac007d": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac007e": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac007f": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac0080": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0081": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0082": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac0083": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0084": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0085": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac0086": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0087": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0088": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac0089": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac008a": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac008b": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac008c": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac008d": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac008e": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac008f": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0090": {
+      "bytes": 1,
+      "nonzero": []
+    },
+    "0x1ac0091": {
+      "bytes": 1,
+      "nonzero": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "0x1ac0092": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    "0x1ac0093": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0094": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0095": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0096": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac0097": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac0098": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac0099": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac009a": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac009b": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac009c": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac009d": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac009e": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac009f": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac00a0": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac00a1": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac00a2": {
+      "bytes": 2,
+      "nonzero": [
+        [
+          0,
+          21
+        ]
+      ]
+    },
+    "0x1ac00a3": {
+      "bytes": 2,
+      "nonzero": []
+    },
+    "0x1ac00a4": {
+      "bytes": 256,
+      "nonzero": []
+    },
+    "0x1ac00a5": {
+      "bytes": 1,
+      "nonzero": []
+    }
+  },
+  "source": "Validated unused FTP defaults from the original ZV-1 backup; only sizes and sparse constants, no full backup or credentials"
+}

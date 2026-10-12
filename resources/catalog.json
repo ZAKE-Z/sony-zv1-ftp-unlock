@@ -1,0 +1,686 @@
+{
+  "firmware": "29114_04.2021031701",
+  "native_sysdef_md5": "6699586d60f159f8db07f682b7c5f591",
+  "configuration_writes": true,
+  "firmware_stage_configuration_writes": false,
+  "server_credentials_included": false,
+  "variants": [
+    {
+      "name": "auto_obj_native",
+      "target": "/usr/lib/libObj.so",
+      "original_sha256": "49fd771830f5efc27d79ebef965eeadf68dad6fcae4b22710ed7b4af1350068d",
+      "candidate_sha256": "6f054bbb183667b462ad544aa16cd01436dbaf804b174f40d24c00cf87f86f11",
+      "original_md5": "02a18143b45aca4693ea1271d1cc9923",
+      "candidate_md5": "55b4894471fdb09f87a1a1783b07875b",
+      "patches": [
+        {
+          "offset": "0x2fcc88",
+          "old": "f0",
+          "new": "b0",
+          "role": "Known working FTP restoration"
+        },
+        {
+          "offset": "0x2fcc8a",
+          "old": "04",
+          "new": "6f",
+          "role": "Known working FTP restoration"
+        },
+        {
+          "offset": "0x2fcc8c",
+          "old": "6d4885b000af78440e466c4dccf634ffccf62bff012c7d4402dc694878447ae07668132267483146784411f6faea002876d0654831461222784411f6f2ea002870d0624831461322784411f6eaea00286ad05f4831461322784411f6e2ea002864d05c4831461122784411f6daea00285ed0594831461422784411f6d2ea002858d0",
+          "new": "0446b0f5805f29d3e56c3db3eb6a2bb1ab6a5bb9e06c0368db689847ab6aebb9284603689b689847002819d1656dadb1eb6a3bb1ab6a0bb12b6c6bb928460368db689847ab6a4bb92b6c3bb9284603689b689847002803d10020b0bd0120b0bd0546606d20b1c36a13b10368db689847e06c20b1c36a13b10368db6898472846b0bd",
+          "role": "Known working FTP restoration"
+        },
+        {
+          "offset": "0x304460",
+          "old": "75d123",
+          "new": "00bf58",
+          "role": "Known working FTP restoration"
+        },
+        {
+          "offset": "0x304464",
+          "old": "712031214ff42472302609f099fd",
+          "new": "f8f710fc002871d1002c6ed13026",
+          "role": "Known working FTP restoration"
+        },
+        {
+          "offset": "0x12fcb50",
+          "old": "146bf17f",
+          "new": "0b849780",
+          "role": "Known working FTP restoration"
+        }
+      ],
+      "writer": "auto_obj_native.elf",
+      "writer_sha256": "92f6e6f2e2e91290954ef9487104d25203ee54c70c4dcf460c7332669618ec9a"
+    },
+    {
+      "name": "auto_view_native",
+      "target": "/usr/lib/viewUnified2.so",
+      "original_sha256": "6df626f5ea17970ddd48aeca52eeb924d119b22b8ed491ee643c907b033a840e",
+      "candidate_sha256": "44e67a527157c44a71f89aa526cbe09f248e3437a7a4326e2ab2e79e627f6e96",
+      "original_md5": "14e51f30ec7286469c129fb2b3db741a",
+      "candidate_md5": "cabbcc785a98a9c0d1fcf8f323b097c3",
+      "patches": [
+        {
+          "offset": "0x791a84",
+          "old": "03",
+          "new": "07",
+          "role": "Known working FTP restoration"
+        }
+      ],
+      "writer": "auto_view_native.elf",
+      "writer_sha256": "230042f2e086c4fb62c269b34bf777eae3df07b8527d7b96b647c92e1d824ecb"
+    },
+    {
+      "target": "/usr/lib/CautionConfig.so",
+      "original_sha256": "5b0152c3c936a26b2638023916bc739e2ec54804240296fe8f16af36d22cd11a",
+      "candidate_sha256": "6a38e62d6a7e13727d70dc766760d7d28e6a89eda3ca3471d4d019d3844e24bf",
+      "original_md5": "dbc1847e52f344e7e103f711f5939eac",
+      "candidate_md5": "a650ac6b52176ca20f8356f0f425f352",
+      "patches": [
+        {
+          "offset": "0xabc0ca",
+          "old": "436880b5",
+          "new": "f3f157b9",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0cf",
+          "old": "af33b18068",
+          "new": "bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0d5",
+          "old": "2805dd0b601060012080bd184680bd",
+          "new": "bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0e5",
+          "old": "2080bd",
+          "new": "bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf350",
+          "old": "b0b582b000af07f10801144c0546002311487c4401f8013df5f54eecb8b9fb79502b08d0562b01d04c2b09d10c4be3586b600c4b08e00c4be3586b600b",
+          "new": "024b7b444360032383607047d691300043684bb18068002806dd0328c8bf03200b6010600120704700207047d0f800c00e4b7b449c4501d1fff7eabf0c",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf38e",
+          "old": "03e00b4be3586b600b4be3581b68ab6007f10807bd46b0bd00bf1603070192022600a4290500d00a030054c40300e4f201",
+          "new": "7b449c4501d100f05eb80a4b7b449c4501d100f0c6b8436833b18068002803dd0b601060012070470020704700bf520026",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf3c0",
+          "old": "d89701",
+          "new": "defc25",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf3c4",
+          "old": "78f102",
+          "new": "e2e025",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf444",
+          "old": "b0b582b000af07f10801104c054600230d487c4401f8013df5f5d4eb80b9fb79502b01d0562b04d1094be3586b60094b03e0094be3586b60084be3581b68ab6007f10807bd46b0bd160307019e012600f8c803004c310100f489030008a1",
+          "new": "024b7b444360022383607047f294300043686bb1806800280add032801d1043302200228c8bf02200b601060012070470020704700bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf4a3",
+          "old": "00",
+          "new": "bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf520",
+          "old": "b0b582b000af07f10801104c054600230d487c4401f8013df5f566eb80b9fb79502b01d0562b04d1094be3586b60094b03e0094be3586b60084be3581b68ab6007f10807bd46b0bd16030701c20026000cb6040098a00100d8b1",
+          "new": "024b7b4443600323836070475285300043684bb18068002806dd0328c8bf03200b601060012070470020704700bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf57b",
+          "old": "004c110300",
+          "new": "bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe422f4",
+          "old": "d5b3",
+          "new": "25a9",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe42300",
+          "old": "d8b3",
+          "new": "3ba9",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe4230c",
+          "old": "02",
+          "new": "00",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe42324",
+          "old": "f8",
+          "new": "f9",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe42328",
+          "old": "20",
+          "new": "0e",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe42330",
+          "old": "01",
+          "new": "f9",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe4233c",
+          "old": "8b",
+          "new": "c2",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe67004",
+          "old": "088497",
+          "new": "b0b0b0",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b0f4",
+          "old": "7cb6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b114",
+          "old": "98b6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b134",
+          "old": "b4b6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        }
+      ],
+      "name": "unified_menu_native_native",
+      "writer": "menu_native.elf",
+      "writer_sha256": "4092a4996d78e5716d751685dc2620c4c947813821d25a377266a9a92e5cf25d"
+    },
+    {
+      "target": "/usr/lib/CautionConfig.so",
+      "original_sha256": "85898042753c1865df5a82a1a83694965f1cd1a60059103060870cfa3817e92a",
+      "candidate_sha256": "6a38e62d6a7e13727d70dc766760d7d28e6a89eda3ca3471d4d019d3844e24bf",
+      "original_md5": "efd4bd7be4e46a35c0b8a33429e5973b",
+      "candidate_md5": "a650ac6b52176ca20f8356f0f425f352",
+      "patches": [
+        {
+          "offset": "0xabc0ca",
+          "old": "436880b5",
+          "new": "f3f157b9",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0cf",
+          "old": "af33b18068",
+          "new": "bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0d5",
+          "old": "2805dd0b601060012080bd184680bd",
+          "new": "bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0e5",
+          "old": "2080bd",
+          "new": "bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf350",
+          "old": "b0b582b000af07f10801144c0546002311487c4401f8013df5f54eecb8b9fb79502b08d0562b01d04c2b09d10c4be3586b600c4b08e00c4be3586b600b",
+          "new": "024b7b444360032383607047d691300043684bb18068002806dd0328c8bf03200b6010600120704700207047d0f800c00e4b7b449c4501d1fff7eabf0c",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf38e",
+          "old": "03e00b4be3586b600b4be3581b68ab6007f10807bd46b0bd00bf1603070192022600a4290500d00a030054c40300e4f201",
+          "new": "7b449c4501d100f05eb80a4b7b449c4501d100f0c6b8436833b18068002803dd0b601060012070470020704700bf520026",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf3c0",
+          "old": "d89701",
+          "new": "defc25",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf3c4",
+          "old": "78f102",
+          "new": "e2e025",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf444",
+          "old": "b0b582b000af07f10801104c054600230d487c4401f8013df5f5d4eb80b9fb79502b01d0562b04d1094be3586b60094b03e0094be3586b60084be3581b68ab6007f10807bd46b0bd160307019e012600f8c803004c310100f489030008a1",
+          "new": "024b7b444360022383607047f294300043686bb1806800280add032801d1043302200228c8bf02200b601060012070470020704700bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf4a3",
+          "old": "00",
+          "new": "bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf520",
+          "old": "b0b582b000af07f10801104c054600230d487c4401f8013df5f566eb80b9fb79502b01d0562b04d1094be3586b60094b03e0094be3586b60084be3581b68ab6007f10807bd46b0bd16030701c20026000cb6040098a00100d8b1",
+          "new": "024b7b4443600323836070475285300043684bb18068002806dd0328c8bf03200b601060012070470020704700bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf57b",
+          "old": "004c110300",
+          "new": "bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe67004",
+          "old": "088497",
+          "new": "b0b0b0",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b0f4",
+          "old": "7cb6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b114",
+          "old": "98b6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b134",
+          "old": "b4b6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        }
+      ],
+      "name": "unified_menu_tvonly_native",
+      "writer": "menu_tvonly.elf",
+      "writer_sha256": "0a4b2ce65e689c293c284740837b1811f8774f21e06db608344912eb30706b7c"
+    },
+    {
+      "target": "/usr/lib/CautionConfig.so",
+      "original_sha256": "258b60f0ce8033b38028ffd3bbbac42c61914731f98952bdcd12556d84b3a094",
+      "candidate_sha256": "6a38e62d6a7e13727d70dc766760d7d28e6a89eda3ca3471d4d019d3844e24bf",
+      "original_md5": "a58170c7fb6ab7ae2c1dba1dd198eaf9",
+      "candidate_md5": "a650ac6b52176ca20f8356f0f425f352",
+      "patches": [
+        {
+          "offset": "0xabc0ca",
+          "old": "436880b5",
+          "new": "f3f157b9",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0cf",
+          "old": "af33b18068",
+          "new": "bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0d5",
+          "old": "2805dd0b601060012080bd184680bd",
+          "new": "bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xabc0e5",
+          "old": "2080bd",
+          "new": "bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf350",
+          "old": "b0b582b000af07f10801144c0546002311487c4401f8013df5f54eecb8b9fb79502b08d0562b01d0542b09d10c4be3586b600c4b08e00c4be3586b600b",
+          "new": "024b7b444360032383607047d691300043684bb18068002806dd0328c8bf03200b6010600120704700207047d0f800c00e4b7b449c4501d1fff7eabf0c",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf38e",
+          "old": "03e00b4be3586b600b4be3581b68ab6007f10807bd46b0bd00bf1603070192022600a4290500d00a030054c40300e4f201",
+          "new": "7b449c4501d100f05eb80a4b7b449c4501d100f0c6b8436833b18068002803dd0b601060012070470020704700bf520026",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf3c0",
+          "old": "d89701",
+          "new": "defc25",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf3c4",
+          "old": "78f102",
+          "new": "e2e025",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf444",
+          "old": "b0b582b000af07f10801104c054600230d487c4401f8013df5f5d4eb80b9fb79502b01d0562b04d1094be3586b60094b03e0094be3586b60084be3581b68ab6007f10807bd46b0bd160307019e012600f8c803004c310100f489030008a1",
+          "new": "024b7b444360022383607047f294300043686bb1806800280add032801d1043302200228c8bf02200b601060012070470020704700bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf4a3",
+          "old": "00",
+          "new": "bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf520",
+          "old": "b0b582b000af07f10801104c054600230d487c4401f8013df5f566eb80b9fb79502b01d0562b04d1094be3586b60094b03e0094be3586b60084be3581b68ab6007f10807bd46b0bd16030701c20026000cb6040098a00100d8b1",
+          "new": "024b7b4443600323836070475285300043684bb18068002806dd0328c8bf03200b601060012070470020704700bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf57b",
+          "old": "004c110300",
+          "new": "bf00bf00bf",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe67004",
+          "old": "088497",
+          "new": "b0b0b0",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b0f4",
+          "old": "7cb6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b114",
+          "old": "98b6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xe7b134",
+          "old": "b4b6fe7f",
+          "new": "b0b0b080",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        }
+      ],
+      "name": "unified_menu_a581_native",
+      "writer": "menu_a581.elf",
+      "writer_sha256": "f1a6c15560f6a66e2b8e940761e61358a8cc2ac03551dceeeeb2a69998d96dd8"
+    },
+    {
+      "target": "/usr/lib/CautionConfig.so",
+      "original_sha256": "2981dc9f05ff526c52b30d298f68714403acff5108feee60564fa8358d9c1951",
+      "candidate_sha256": "6a38e62d6a7e13727d70dc766760d7d28e6a89eda3ca3471d4d019d3844e24bf",
+      "original_md5": "ba5f61fff17e5ce201d53dccca5725bf",
+      "candidate_md5": "a650ac6b52176ca20f8356f0f425f352",
+      "patches": [
+        {
+          "offset": "0xabc0cc",
+          "old": "53",
+          "new": "57",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf360",
+          "old": "034b7b440b60032010600120704700bfc6913000d0f800c00e4b7b449c4501d1fff7eebf0c4b7b449c4501d100f062b80a4b7b449c4501d100f0cab8436833b18068002803dd0b601060012070470020704700bf5a002600e6fc2500eae025",
+          "new": "43684bb18068002806dd0328c8bf03200b6010600120704700207047d0f800c00e4b7b449c4501d1fff7eabf0c4b7b449c4501d100f05eb80a4b7b449c4501d100f0c6b8436833b18068002803dd0b601060012070470020704700bf520026",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf3c0",
+          "old": "00bf00bf00bf00bf",
+          "new": "defc2500e2e02500",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf454",
+          "old": "034b7b440b60022010600120704700bfe294300000",
+          "new": "43686bb1806800280add032801d1043302200228c8",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf46a",
+          "old": "00bf00bf00bf00bf00bf",
+          "new": "02200b60106001207047",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf475",
+          "old": "bf00bf",
+          "new": "207047",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf530",
+          "old": "034b7b440b60032010600120704700bf4285300000bf00bf",
+          "new": "43684bb18068002806dd0328c8bf03200b60106001207047",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        },
+        {
+          "offset": "0xcaf549",
+          "old": "bf00bf",
+          "new": "207047",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        }
+      ],
+      "name": "unified_menu_reader_native",
+      "writer": "menu_reader.elf",
+      "writer_sha256": "fc69217758958df77d39a31f8aa57d4df6f8d8fd8f3fd03ce6b1ecb8fb394eb8"
+    },
+    {
+      "target": "/usr/lib/CautionConfig.so",
+      "original_sha256": "a216f0e47c5b7f6a8c2a7d5e6140bcd0ec112e22a7c47af60055c3cea0d7f377",
+      "candidate_sha256": "6a38e62d6a7e13727d70dc766760d7d28e6a89eda3ca3471d4d019d3844e24bf",
+      "original_md5": "67fc8756df5c07f45dd4a18d088933b6",
+      "candidate_md5": "a650ac6b52176ca20f8356f0f425f352",
+      "patches": [
+        {
+          "offset": "0xcaf52c",
+          "old": "ee8c",
+          "new": "5285",
+          "role": "Unified FTP menu; remove duplicate auto transfer and keep owned lists"
+        }
+      ],
+      "name": "unified_menu_owned_native",
+      "writer": "menu_owned.elf",
+      "writer_sha256": "b9c6ed62be32fd083ca663dd1906b9d045e35886841213fb75b4916a4cef4ccf"
+    },
+    {
+      "target": "/usr/lib/viewUnified4.so",
+      "original_md5": "b2d7300dad966cba6241e08441f6475b",
+      "candidate_md5": "3c1bd90592cf8e6a365f21576fc1ee3e",
+      "original_sha256": "acec670d203e7d847514493becc727714af65477e61897d224d0d4c394eaa4fb",
+      "candidate_sha256": "28e8d6540858544a3ac08433e0ee04e6950c0cfb990ebc4b42d0911ce62ae159",
+      "patches": [
+        {
+          "offset": "0x228514",
+          "old": "b0b500af5a49054646f6e0ee48f6f2ef0446002800f0ab80d5f850339a1e042a40f29880072b0bd145f69eee0146632045f696ea204645f698ee01464d4892e0082b0bd145f690ee0146642045f688ea204645f68aee0146474884e0092b0bd145f682ee0146652045f67aea204645f67cee0146414876e00a2b0bd145f674ee0146662045f66cea204645f66eee01463b4868e00b2b0bd145f666ee0146672045f65eea204645f660ee014635485ae00c2b0bd145f658ee0146682045f650ea204645f652ee01462f484ce00d2b0bd145f64aee0146692045f642ea204645f644ee014629483ee00e2b0bd145f63cee01466a2045f634ea204645f636ee0146234830e00f2b0bd145f62eee01466b2045f626ea204645f628ee01461d4822e0112b04d145f620ee01461b481be0122b0fd0132b04d145f618ee0146174812e0142b04d145f610ee014615480be0152b05d1204645f608ee0146124803e045f604ee01461048bde8b04045f6dbbdb0bdb8eeb203391907013a1907013b1907013e1c07013f1c0701401c0701411c0701421c0701431c0701521c0701cf1c0701d51c070123190701ee130701",
+          "new": "2de9f041c0b005462d4946f6e0ee48f6f2ef0446002800f05080d5f85063022e32d0032e30d0b31e042b24d9122e22d0152e20d0f31f082b10d8204645f694ee014606f15c0045f68cea204645f68cee0146073e20a353f8260012e01a4f112e01d11a4f08e0132e01d1194f04e0142e02d1184f00e0134f204645f676ee0146384645f650ee18e0204645f66eee064669464022002341f8043b013afbd146b16946ff2216f8013b01f8013b0bb1013af8d10448694645f636ee40b0bde8f081b8eeb20323190701ee130701521c0701cf1c0701d51c0701391907013a1907013b1907013e1c07013f1c0701401c0701411c0701421c0701431c070100bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Bounded host and port commit; preserve other native cases"
+        },
+        {
+          "offset": "0x2da560",
+          "old": "0b849780",
+          "new": "b0ac3f80",
+          "role": "Correct compact unwind for fixed scratch frame"
+        }
+      ],
+      "name": "bounded_input_native",
+      "writer": "bounded_input.elf",
+      "writer_sha256": "54981ba0582234a334a007c947eca09d4760f355a016d8a96d74127b7cf67bb8"
+    }
+  ],
+  "libraries": {
+    "libInfraFtpClient.so": {
+      "bytes": 130988,
+      "md5": "150a231d045452d1818cb449da26fa81",
+      "sha256": "ffaee2b2cd4ae857690068d2a858d76d0f92614739cbb6a6e1d1f3a069a8c6a4"
+    },
+    "libcurl.so.4": {
+      "bytes": 364820,
+      "md5": "5ca8b6edb5e96a148b29e181ae131042",
+      "sha256": "aaedea2eedbd600c6ba0e0df5ba288aaa241f8bf256c04035356e9f4adddf77a"
+    },
+    "libssh2.so.1": {
+      "bytes": 114004,
+      "md5": "9eb576ae594d58035d63df5cb52fff0c",
+      "sha256": "fe9a7387fe87c39c371ed1137051081b1932cdf8072540e65e1cd243483fa1bd"
+    },
+    "libInfraCertificate.so": {
+      "bytes": 12420,
+      "md5": "7e7e523713a931e1d98aeeb553211ee6",
+      "sha256": "f7de1cf959a8fcf5e027ad2c50863fe5cffa8198a0e567b2d4fd4e78f6b6f9a2"
+    }
+  },
+  "slots": [
+    {
+      "slot": 1,
+      "host": "0x1ac0094",
+      "address_type": "0x1ac0097",
+      "port": "0x1ac0096",
+      "directory": "0x1ac0093",
+      "username": "0x1ac0098",
+      "password": "0x1ac0095",
+      "secure_protocol": "0x1ac0078",
+      "passive_mode": "0x1ac0077",
+      "root_certificate_error": "0x1ac0079"
+    },
+    {
+      "slot": 2,
+      "host": "0x1ac009a",
+      "address_type": "0x1ac009d",
+      "port": "0x1ac009c",
+      "directory": "0x1ac0099",
+      "username": "0x1ac009e",
+      "password": "0x1ac009b",
+      "secure_protocol": "0x1ac007b",
+      "passive_mode": "0x1ac007a",
+      "root_certificate_error": "0x1ac007c"
+    },
+    {
+      "slot": 3,
+      "host": "0x1ac00a0",
+      "address_type": "0x1ac00a3",
+      "port": "0x1ac00a2",
+      "directory": "0x1ac009f",
+      "username": "0x1ac00a4",
+      "password": "0x1ac00a1",
+      "secure_protocol": "0x1ac007e",
+      "passive_mode": "0x1ac007d",
+      "root_certificate_error": "0x1ac007f"
+    },
+    {
+      "slot": 4,
+      "host": "0x1ac0040",
+      "address_type": "0x1ac0043",
+      "port": "0x1ac0042",
+      "directory": "0x1ac003f",
+      "username": "0x1ac0044",
+      "password": "0x1ac0041",
+      "secure_protocol": "0x1ac0081",
+      "passive_mode": "0x1ac0080",
+      "root_certificate_error": "0x1ac0082"
+    },
+    {
+      "slot": 5,
+      "host": "0x1ac004a",
+      "address_type": "0x1ac004d",
+      "port": "0x1ac004c",
+      "directory": "0x1ac0049",
+      "username": "0x1ac004e",
+      "password": "0x1ac004b",
+      "secure_protocol": "0x1ac0084",
+      "passive_mode": "0x1ac0083",
+      "root_certificate_error": "0x1ac0085"
+    },
+    {
+      "slot": 6,
+      "host": "0x1ac0054",
+      "address_type": "0x1ac0057",
+      "port": "0x1ac0056",
+      "directory": "0x1ac0053",
+      "username": "0x1ac0058",
+      "password": "0x1ac0055",
+      "secure_protocol": "0x1ac0087",
+      "passive_mode": "0x1ac0086",
+      "root_certificate_error": "0x1ac0088"
+    },
+    {
+      "slot": 7,
+      "host": "0x1ac005e",
+      "address_type": "0x1ac0061",
+      "port": "0x1ac0060",
+      "directory": "0x1ac005d",
+      "username": "0x1ac0062",
+      "password": "0x1ac005f",
+      "secure_protocol": "0x1ac008a",
+      "passive_mode": "0x1ac0089",
+      "root_certificate_error": "0x1ac008b"
+    },
+    {
+      "slot": 8,
+      "host": "0x1ac0068",
+      "address_type": "0x1ac006b",
+      "port": "0x1ac006a",
+      "directory": "0x1ac0067",
+      "username": "0x1ac006c",
+      "password": "0x1ac0069",
+      "secure_protocol": "0x1ac008d",
+      "passive_mode": "0x1ac008c",
+      "root_certificate_error": "0x1ac008e"
+    },
+    {
+      "slot": 9,
+      "host": "0x1ac0072",
+      "address_type": "0x1ac0075",
+      "port": "0x1ac0074",
+      "directory": "0x1ac0071",
+      "username": "0x1ac0076",
+      "password": "0x1ac0073",
+      "secure_protocol": "0x1ac0090",
+      "passive_mode": "0x1ac008f",
+      "root_certificate_error": "0x1ac0091"
+    }
+  ],
+  "config_cipher": {
+    "bytes": 4636,
+    "sha256": "463135ddeb8782b6a2bf6ebba4c3312bffb24467c07dc1be1783adbdeb5c7c1e",
+    "backup_manager_md5": "923414410f8c007b4e678735819dd9c6",
+    "backup_library_md5": "00b195929ee642b85de62e1600ca7d02"
+  },
+  "ftp_reset": {
+    "file": "resources/ftp_reset_defaults.json",
+    "sha256": "12235d5aaa982d4126f964f0efa2fe39fd4d0bddef919168805468d6c8306a5c",
+    "scope": "FTP category and known global defaults; no whole Backup.bin or Wi-Fi/USB reset"
+  }
+}

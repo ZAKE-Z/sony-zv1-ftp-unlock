@@ -1,0 +1,77 @@
+{
+  "firmware": "29114_04.2021031701",
+  "helper": {
+    "bytes": 4448,
+    "sha256": "b30e7b1023b24b845faef62e4b19777dc20dafde7385c107565087c6b4923aab"
+  },
+  "files": {
+    "/usr/lib/libIMDB.so": {
+      "md5": "ee9b15e43b87b22702268ee608e1d562",
+      "bytes": 35672,
+      "source": "snapshot zv1-abi-20261007-133634-931057, camera checksum verified"
+    },
+    "/usr/lib/libssl.so.1.1": {
+      "md5": "9fc11d38d8aae9e4f6278cdaad8b3575",
+      "bytes": 365040,
+      "source": "ftpdeps run 20261007-142654, camera md5 verified"
+    },
+    "/usr/lib/libcrypto.so.1.1": {
+      "md5": "ed623b65f71008aae3da0f047611806e",
+      "bytes": 1897536,
+      "source": "ftpdeps run 20261007-142654, camera md5 verified"
+    },
+    "/usr/bin/im.elf": {
+      "md5": "36fe7cc163b8a4cc5412fcb5fbdb3a30",
+      "bytes": 21820,
+      "source": "md5 verified twice: camera md5sum and pulled file (zv1-menu-20261007-150417)"
+    },
+    "/usr/lib/libInfraFtpClient.so": {
+      "md5": null,
+      "bytes": null,
+      "source": "CONFIRMED ABSENT on camera (ls: No such file or directory, zv1-menu-20261007-150417); record-only"
+    }
+  },
+  "ranges": [
+    {
+      "file": "/usr/lib/libIMDB.so",
+      "offset": "0x6060",
+      "bytes": 9296,
+      "tag": "imdb_init_arrays_and_data_rel_ro",
+      "note": "live relocated module-entry tables of the im.elf module database"
+    },
+    {
+      "file": "/usr/lib/libIMDB.so",
+      "offset": "0x85c8",
+      "bytes": 44,
+      "tag": "imdb_got_and_data",
+      "note": "live GOT and mutable data of libIMDB.so"
+    },
+    {
+      "file": "/usr/bin/im.elf",
+      "offset": "0x4000",
+      "bytes": 4096,
+      "tag": "im_elf_rw_segment",
+      "note": "whole rw file-backed segment of the running module manager"
+    }
+  ],
+  "pull_files": [
+    "/usr/bin/im.elf",
+    "/usr/lib/libInfraFtpClient.so",
+    "/usr/share/app/master_network.uxc",
+    "/usr/share/app/master_camera.uxc",
+    "/usr/share/app/master_other.uxc",
+    "/usr/share/app/master_browser.uxc",
+    "/usr/share/app/viewFtpExecution.uxc",
+    "/usr/share/app/viewFtpFunction.uxc",
+    "/usr/share/app/viewFtpImgTypeSelection.uxc",
+    "/usr/share/app/viewFtpResult.uxc",
+    "/usr/share/app/viewFtpServer.uxc",
+    "/usr/share/app/viewFtpServerSettings.uxc",
+    "/usr/share/app/viewFtpSettingTransfer.uxc",
+    "/usr/share/app/viewFtpTransfer.uxc",
+    "/usr/share/app/viewFtpTransferring.uxc",
+    "/usr/share/app/viewSendSelected4IndexFtp.uxc",
+    "/usr/share/app/viewSendSelected4SingleFtp.uxc",
+    "/usr/share/app/global.xdb"
+  ]
+}
