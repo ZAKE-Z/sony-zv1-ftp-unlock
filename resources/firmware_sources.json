@@ -50,6 +50,16 @@
       ],
       "source_sha256": "fe9a7387fe87c39c371ed1137051081b1932cdf8072540e65e1cd243483fa1bd",
       "final_sha256": "fe9a7387fe87c39c371ed1137051081b1932cdf8072540e65e1cd243483fa1bd"
+    },
+    "libnss_dns.so.2": {
+      "firmware": "a7c_200",
+      "source_partition": "nflasha7",
+      "source_names": [
+        "libnss_dns-2.11.2.so"
+      ],
+      "source_path": "/lib/libnss_dns-2.11.2.so",
+      "source_sha256": "ccd39668dbe4441076bda7053dd69762a72fe26ee12746adb2e6b701177b7d1e",
+      "final_sha256": "ccd39668dbe4441076bda7053dd69762a72fe26ee12746adb2e6b701177b7d1e"
     }
   },
   "certificate_also_identical_in": "a7iii_401",

@@ -2,6 +2,9 @@
 import builtins,os,sys
 LANG=os.environ.get('ZV1_FTP_LANG','en');CONSOLE=None
 PAIRS=[
+ ('DNS resolver ABI mismatch: ','DNS 解析器基础库不匹配：'),
+ ('DNS module loading failed','DNS 解析模块加载失败'),
+ ('Unsupported donor partition','供体分区不受支持'),
  ('ZV-1 FTP firmware installation; write server configuration separately in step 3','ZV-1 FTP 固件安装；服务器配置由第 3 步单独写入'),
  ('Check local firmware resources only; do not access camera','仅检查本地固件资源，不访问相机'),
  ('Read-only camera firmware check','只读检查相机固件，不写入'),

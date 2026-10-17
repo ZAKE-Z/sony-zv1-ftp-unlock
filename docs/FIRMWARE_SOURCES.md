@@ -8,8 +8,11 @@ The source of each installed library was checked against the original firmware f
 | libInfraCertificate.so | Sony a7C (ILCE-7C) | 2.00 | libInfraCertificate.so | Unmodified bytes |
 | libcurl.so.4 | Sony a7C (ILCE-7C) | 2.00 | libcurl.so.4.7.0 | Unmodified bytes |
 | libssh2.so.1 | Sony a7C (ILCE-7C) | 2.00 | libssh2.so.1.0.1 | Unmodified bytes |
+| libnss_dns.so.2 | Sony a7C (ILCE-7C) | 2.00 | nflasha7: /lib/libnss_dns-2.11.2.so | Unmodified bytes; output runtime name selected automatically |
 
 `libInfraCertificate.so` is byte-identical in a7C 2.00 and a7 III 4.01. This workflow consistently extracts it from a7C 2.00. The installed curl SONAME is `libcurl.so.4`; the source file is `libcurl.so.4.7.0`. **4.7.0 here is the library filename, not the camera firmware version.** Likewise ssh2 is extracted from `libssh2.so.1.0.1` and written locally as `libssh2.so.1`.
+
+The DNS module is in system partition `nflasha7`; the other four libraries come from user partition `nflasha15`. Extraction reads both partitions and outputs only manifest-selected, hash-matched files. Its source name is `libnss_dns-2.11.2.so`, and its output/runtime name is `libnss_dns.so.2`; no manual copying or renaming is needed.
 
 ## Required downloads
 
@@ -34,7 +37,7 @@ python scripts/en_1_extract_firmware.py --check
 python scripts/en_1_extract_firmware.py
 ```
 
-`--check` checks the exact downloaded files without unpacking or accessing a camera. Normal extraction uses the bundled MIT-licensed fwtool source and standard Python crypto dependencies. It decrypts the firmware into temporary local files, reads only the needed libraries from the user partition, validates internal model/version and original library hashes, applies the final FTP transfer patch, and validates all output hashes against `resources/catalog.json` before publishing files under `assets/`.
+`--check` checks the exact downloaded files without unpacking or accessing a camera. Normal extraction uses the bundled MIT-licensed fwtool source and standard Python crypto dependencies. It decrypts the firmware into temporary local files, reads only the needed libraries from the specified system/user partitions, validates internal model/version and original library hashes, applies the final FTP transfer patch, and validates all output hashes against `resources/catalog.json` before publishing files under `assets/`.
 
 Only local files are read; no firmware is automatically downloaded, and no camera is accessed. Temporary decrypted images are closed/deleted by Python. About 1 GB of free temporary disk space is recommended. `assets/extraction.private.json` records the source evidence. EXEs, extracted libraries and evidence are ignored by Git. `en_2_unlock_ftp.py` automatically invokes extraction if any required library is missing.
 

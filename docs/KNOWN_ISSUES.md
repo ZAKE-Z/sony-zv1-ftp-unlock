@@ -2,11 +2,12 @@
 
 | Item | Status / limits |
 | --- | --- |
+| DNS / domains | Missing NSS DNS module added; native primary/secondary DNS enabled. Owner confirmed the page and FTP-domain connection/transfer on 2026-10-17. One camera/network only; not every router or manual-DNS editing combination is covered |
 | Full factory restoration | Step 4 restore, in-camera initialization, official 2.01 reinstall after changing the reported version, or a combination may help, but each can leave changes or traces. Even reinstalling 2.01 does not guarantee an untouched state |
 | Camera coverage | Previously successful FTP transfer on the owner's single ZV-1 only; no guarantee for other units or models |
-| IP/port entry | Often failed when FTP was first enabled, but sometimes began working later for unknown reasons. If it stays unusable, edit `ftp_config.json` and run step 3. In-camera username/password entry worked in earlier tests |
+| IP/port entry | May fail initially. The latest owner test found that one FTP connection attempt, even a failed attempt, allows subsequent in-camera IP editing; the reason is unknown. If it remains unusable, use `ftp_config.json` and step 3. Username/password entry worked; further input-page patching is deferred |
 | Final menu | Single auto-transfer item and adjusted paging installed/verified as files in prior work; latest navigation still needs on-camera confirmation |
-| New workflow | Actual extraction from both original packages passes and all four generated hashes match. Root install/restore/version workflow has only offline tests, not fresh on-camera end-to-end verification |
+| New workflow | Actual extraction from both original packages passes and all five generated hashes match. Root install/restore/version workflow has only offline tests, not fresh on-camera end-to-end verification |
 | Transfer / DISP | Earlier user tests passed connection, photo transfer and hiding the FTP icon. Does not cover all servers, RAW, FTPS or background transfer scenarios |
 | Wired/wireless | Kept selectable by request; wired FTP on ZV-1 has not been demonstrated |
 | Profile writing | The rebuilt helper wrote all nine slots with camera readback; FTP1 displayed 127.0.0.1:21 on 2026-10-12. Connection to a real server with this helper remains untested |
@@ -20,3 +21,5 @@
 Report model, firmware, command and exact error without uploading passwords, complete logs, Backup.bin or Sony binaries.
 
 Additional on-camera result: after setting the reported version to 2.00 and reinstalling 2.01 with the official updater, the owner also needed an in-camera initialization for normal restoration. The version script does not run the official update or camera initialization.
+
+This release recognizes stock, the previous installation without DNS repair, and the current final hashes. Unknown modifications remain refused. The expanded restore has not been rerun on camera.

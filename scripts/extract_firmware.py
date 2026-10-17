@@ -65,17 +65,22 @@ def extract_libraries(exe_path,spec,wanted):
   meta=fdat.readFdat(decrypted)
   if meta.model!=int(spec['model_id'],16) or meta.version!=spec['version']:raise ValueError('Internal camera model/firmware version mismatch')
   print('Verified firmware:',spec['camera'],meta.version,flush=True)
+  partitions={row.get('source_partition','nflasha15') for row in wanted.values()}
+  if not partitions <= {'nflasha7','nflasha15'}:raise ValueError('Unsupported donor partition')
   for member in archive.readArchive(meta.firmware):
-   if not stat.S_ISREG(member.mode) or not member.path.endswith('/dev/nflasha15'):continue
+   partition=Path(member.path).name
+   if not stat.S_ISREG(member.mode) or partition not in partitions:continue
    for entry in archive.readArchive(member.contents):
     if not stat.S_ISREG(entry.mode):continue
     name=Path(entry.path).name
     for target,row in wanted.items():
+     if partition!=row.get('source_partition','nflasha15'):continue
      if name not in row['source_names']:continue
+     if row.get('source_path') and '/'+entry.path.lstrip('/')!=row['source_path']:continue
      data=entry.contents.read()
      if hashlib.sha256(data).hexdigest()!=row['source_sha256']:raise ValueError('Wrong library hash: '+name)
      result[target]=data
-   break
+   if set(result)==set(wanted):break
  if set(result)!=set(wanted):raise ValueError('Required donor files missing: '+str(set(wanted)-set(result)))
  return result
 def prepare(directory=None,output=None,check_only=False):
@@ -94,7 +99,7 @@ def prepare(directory=None,output=None,check_only=False):
    if 'patch_plan' in row:
     plan=json.loads((ROOT/row['patch_plan']).read_text(encoding='utf-8'));data=apply_patches(data,plan)
    if hashlib.sha256(data).hexdigest()!=row['final_sha256']:raise ValueError('Generated library mismatch: '+name)
-   generated[name]=data;evidence[name]={'camera':spec['camera'],'firmware':spec['version'],'package_sha256':spec['exe_sha256'],'sha256':row['final_sha256']}
+   generated[name]=data;evidence[name]={'camera':spec['camera'],'firmware':spec['version'],'package_sha256':spec['exe_sha256'],'sha256':row['final_sha256'],'source_partition':row.get('source_partition','nflasha15'),'source_names':row['source_names']}
  target=Path(output or ROOT/'assets');target.mkdir(parents=True,exist_ok=True)
  for name,data in generated.items():
   dest=target/name

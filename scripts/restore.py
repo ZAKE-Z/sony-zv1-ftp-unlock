@@ -4,7 +4,7 @@ from pathlib import Path
 import argparse,datetime,hashlib,json,re,secrets,sys
 ROOT=Path(__file__).resolve().parents[1]
 def stock_variants(catalog):
- writers={'/usr/lib/libObj.so':'auto_obj_native.elf','/usr/lib/viewUnified2.so':'auto_view_native.elf','/usr/lib/CautionConfig.so':'menu_native.elf','/usr/lib/viewUnified4.so':'bounded_input.elf'}
+ writers={'/usr/lib/libObj.so':'auto_obj_native.elf','/usr/lib/viewUnified2.so':'auto_view_native.elf','/usr/lib/CautionConfig.so':'menu_native.elf','/usr/lib/viewUnified4.so':'bounded_input_dns.elf'}
  result=[]
  for target,writer in writers.items():
   rows=[v for v in catalog['variants'] if v['target']==target and v['writer']==writer]
@@ -19,8 +19,10 @@ def restore_plan(catalog,actual):
   if len(candidates)!=1:raise ValueError('No unique stock restore variant: '+path)
   row=candidates[0]
   if actual[path]==row['original_md5']:continue
-  if actual[path]!=row['candidate_md5']:raise ValueError('Unknown firmware state; refusing to restore '+path)
-  result.append(row)
+  choices=[v for v in [row,*catalog.get('legacy_restore_variants',[])]
+           if v['target']==path and v['original_md5']==row['original_md5'] and v['candidate_md5']==actual[path]]
+  if len(choices)!=1:raise ValueError('Unknown firmware state; refusing to restore '+path)
+  result.append(choices[0])
  return result
 def main():
  p=argparse.ArgumentParser(description=tr('Restore stock ZV-1 firmware files; clear FTP profiles; preserve Wi-Fi/USB settings'))

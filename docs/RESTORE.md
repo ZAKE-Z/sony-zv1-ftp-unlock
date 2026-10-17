@@ -7,3 +7,5 @@ There are several ways to try to undo the FTP changes, but none is proven to ret
 3. The optional `python scripts/en_5_set_firmware_version.py` changes only the reported record to 2.00. The owner can then run Sony's official ZV-1 2.01 updater separately. The script itself neither reinstalls firmware nor removes patches. Never run either donor-model updater on the ZV-1.
 
 These methods may be combined, yet an official reinstall of 2.01 can still leave detectable changes. Do not rely on any of them as a complete factory restoration. Keep private backups and reports until you have checked the camera's behavior.
+
+The DNS release removes only the hash-matched `/usr/lib/libnss_dns.so.2` and restores stock viewUnified4 by undoing both the DNS-page gate and existing input patches. The previous known installation without DNS repair is also accepted. Wi-Fi settings, including manual DNS values, are retained. No earlier experimental DNS-setting script or forced DNS default is used.

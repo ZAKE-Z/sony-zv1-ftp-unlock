@@ -1,0 +1,21 @@
+{
+  "status": "PASS_DNS_RELEASE_CHECKS",
+  "date": "2026-10-17",
+  "unit_tests": 35,
+  "exact_official_packages_reextracted": [
+    "a7 III 4.01",
+    "a7C 2.00"
+  ],
+  "generated_libraries_verified": 5,
+  "native_host_transaction_sources_checked": [
+    "bounded_input_dns.c",
+    "dns_ui_writer.c"
+  ],
+  "bilingual_help_entries": 10,
+  "legacy_upgrade_and_restore_checked": true,
+  "fresh_combined_install_camera_tested": false,
+  "expanded_restore_camera_tested": false,
+  "owner_confirmed_dns_page_and_domain_transfer": true,
+  "sony_binaries_included_in_commit": false,
+  "camera_accessed_by_this_audit": false
+}

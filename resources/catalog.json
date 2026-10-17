@@ -518,9 +518,9 @@
     {
       "target": "/usr/lib/viewUnified4.so",
       "original_md5": "b2d7300dad966cba6241e08441f6475b",
-      "candidate_md5": "3c1bd90592cf8e6a365f21576fc1ee3e",
+      "candidate_md5": "55c1e5f81f19b0db393092f816284045",
       "original_sha256": "acec670d203e7d847514493becc727714af65477e61897d224d0d4c394eaa4fb",
-      "candidate_sha256": "28e8d6540858544a3ac08433e0ee04e6950c0cfb990ebc4b42d0911ce62ae159",
+      "candidate_sha256": "52486f978642050ca1d91ec31d622243afcd1b9d0c9ff929e878d29f4228d4be",
       "patches": [
         {
           "offset": "0x228514",
@@ -533,11 +533,35 @@
           "old": "0b849780",
           "new": "b0ac3f80",
           "role": "Correct compact unwind for fixed scratch frame"
+        },
+        {
+          "offset": "0x1a2e24",
+          "old": "044b054a",
+          "new": "02207047",
+          "role": "Enable the native access-point DNS display, editing, save and navigation branches"
         }
       ],
       "name": "bounded_input_native",
-      "writer": "bounded_input.elf",
-      "writer_sha256": "54981ba0582234a334a007c947eca09d4760f355a016d8a96d74127b7cf67bb8"
+      "writer": "bounded_input_dns.elf",
+      "writer_sha256": "76c1a02a30f64265239d6de4aac4346caf2a48aeb2608ea697aa7d466be32620"
+    },
+    {
+      "name": "dns_upgrade_native",
+      "target": "/usr/lib/viewUnified4.so",
+      "original_md5": "3c1bd90592cf8e6a365f21576fc1ee3e",
+      "original_sha256": "28e8d6540858544a3ac08433e0ee04e6950c0cfb990ebc4b42d0911ce62ae159",
+      "candidate_md5": "55c1e5f81f19b0db393092f816284045",
+      "candidate_sha256": "52486f978642050ca1d91ec31d622243afcd1b9d0c9ff929e878d29f4228d4be",
+      "writer": "dns_ui.elf",
+      "writer_sha256": "3f97bca50bec6e12e6cf8c55269b121b745fe5a8668b9b8340049363beca4d26",
+      "patches": [
+        {
+          "offset": "0x1a2e24",
+          "old": "044b054a",
+          "new": "02207047",
+          "role": "Enable the native access-point DNS display, editing, save and navigation branches"
+        }
+      ]
     }
   ],
   "libraries": {
@@ -560,6 +584,11 @@
       "bytes": 12420,
       "md5": "7e7e523713a931e1d98aeeb553211ee6",
       "sha256": "f7de1cf959a8fcf5e027ad2c50863fe5cffa8198a0e567b2d4fd4e78f6b6f9a2"
+    },
+    "libnss_dns.so.2": {
+      "bytes": 22192,
+      "sha256": "ccd39668dbe4441076bda7053dd69762a72fe26ee12746adb2e6b701177b7d1e",
+      "md5": "8ac2b1e8a15d1c9f740a75e6be6ef9e5"
     }
   },
   "slots": [
@@ -682,5 +711,46 @@
     "file": "resources/ftp_reset_defaults.json",
     "sha256": "12235d5aaa982d4126f964f0efa2fe39fd4d0bddef919168805468d6c8306a5c",
     "scope": "FTP category and known global defaults; no whole Backup.bin or Wi-Fi/USB reset"
+  },
+  "legacy_restore_variants": [
+    {
+      "target": "/usr/lib/viewUnified4.so",
+      "original_md5": "b2d7300dad966cba6241e08441f6475b",
+      "candidate_md5": "3c1bd90592cf8e6a365f21576fc1ee3e",
+      "original_sha256": "acec670d203e7d847514493becc727714af65477e61897d224d0d4c394eaa4fb",
+      "candidate_sha256": "28e8d6540858544a3ac08433e0ee04e6950c0cfb990ebc4b42d0911ce62ae159",
+      "patches": [
+        {
+          "offset": "0x228514",
+          "old": "b0b500af5a49054646f6e0ee48f6f2ef0446002800f0ab80d5f850339a1e042a40f29880072b0bd145f69eee0146632045f696ea204645f698ee01464d4892e0082b0bd145f690ee0146642045f688ea204645f68aee0146474884e0092b0bd145f682ee0146652045f67aea204645f67cee0146414876e00a2b0bd145f674ee0146662045f66cea204645f66eee01463b4868e00b2b0bd145f666ee0146672045f65eea204645f660ee014635485ae00c2b0bd145f658ee0146682045f650ea204645f652ee01462f484ce00d2b0bd145f64aee0146692045f642ea204645f644ee014629483ee00e2b0bd145f63cee01466a2045f634ea204645f636ee0146234830e00f2b0bd145f62eee01466b2045f626ea204645f628ee01461d4822e0112b04d145f620ee01461b481be0122b0fd0132b04d145f618ee0146174812e0142b04d145f610ee014615480be0152b05d1204645f608ee0146124803e045f604ee01461048bde8b04045f6dbbdb0bdb8eeb203391907013a1907013b1907013e1c07013f1c0701401c0701411c0701421c0701431c0701521c0701cf1c0701d51c070123190701ee130701",
+          "new": "2de9f041c0b005462d4946f6e0ee48f6f2ef0446002800f05080d5f85063022e32d0032e30d0b31e042b24d9122e22d0152e20d0f31f082b10d8204645f694ee014606f15c0045f68cea204645f68cee0146073e20a353f8260012e01a4f112e01d11a4f08e0132e01d1194f04e0142e02d1184f00e0134f204645f676ee0146384645f650ee18e0204645f66eee064669464022002341f8043b013afbd146b16946ff2216f8013b01f8013b0bb1013af8d10448694645f636ee40b0bde8f081b8eeb20323190701ee130701521c0701cf1c0701d51c0701391907013a1907013b1907013e1c07013f1c0701401c0701411c0701421c0701431c070100bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf00bf",
+          "role": "Bounded host and port commit; preserve other native cases"
+        },
+        {
+          "offset": "0x2da560",
+          "old": "0b849780",
+          "new": "b0ac3f80",
+          "role": "Correct compact unwind for fixed scratch frame"
+        }
+      ],
+      "name": "bounded_input_native",
+      "writer": "bounded_input.elf",
+      "writer_sha256": "54981ba0582234a334a007c947eca09d4760f355a016d8a96d74127b7cf67bb8"
+    }
+  ],
+  "dns_runtime": {
+    "required_native": {
+      "/lib/libc.so.6": {
+        "sha256": "2b294f4c256aebb2746cacddefc39c33c448a0d7f18c2813daa54109c445b910",
+        "md5": "1c0af782eb3090ab29be8f94f6174756"
+      },
+      "/lib/libresolv.so.2": {
+        "sha256": "62e22bd46393e779d6807f0d40fe42d31dceacc8f7a4fa6e3ed7410254d01901",
+        "md5": "ce8aa3049de4076d4fd174fd737baf83"
+      }
+    },
+    "probe": "dns_probe.elf",
+    "probe_sha256": "9b7ade1051f1ede67f04cbefda03f97a580acf183a4c2ab774044507eecb8da2",
+    "probe_bytes": 3120
   }
 }

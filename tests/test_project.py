@@ -24,7 +24,7 @@ class ProjectTests(unittest.TestCase):
   with self.assertRaises(RuntimeError):m.select(c,{**final,'/usr/lib/CautionConfig.so':'0'*32})
  def test_custom_tools_hash(self):
   c=json.loads((ROOT/'resources/catalog.json').read_text())
-  for v in c['variants']:self.assertEqual(hashlib.sha256((ROOT/'assets'/v['writer']).read_bytes()).hexdigest(),v['writer_sha256'])
+  for v in c['variants']+c.get('legacy_restore_variants',[]):self.assertEqual(hashlib.sha256((ROOT/'assets'/v['writer']).read_bytes()).hexdigest(),v['writer_sha256'])
   self.assertEqual(hashlib.sha256((ROOT/'assets/config_cipher.elf').read_bytes()).hexdigest(),c['config_cipher']['sha256'])
  def test_unlock_does_not_write_server_configuration(self):
   import extract_firmware,setup_environment

@@ -5,6 +5,11 @@ import argparse, datetime, hashlib, json, re, sys, time, secrets
 ROOT = Path(__file__).resolve().parents[1]
 sha = lambda b: hashlib.sha256(b).hexdigest()
 
+def final_variants(catalog):
+    """First row per target is the canonical full patch, ahead of upgrade-only rows."""
+    return [next(v for v in catalog['variants'] if v['target']==target)
+            for target in sorted({v['target'] for v in catalog['variants']})]
+
 def select(catalog, actual):
     selected = []
     for target in sorted({v['target'] for v in catalog['variants']}):
@@ -23,6 +28,8 @@ def validate(catalog):
     for v in catalog['variants']:
         b = (ROOT/'assets'/v['writer']).read_bytes()
         assert sha(b) == v['writer_sha256']
+    dns=catalog['dns_runtime'];probe=(ROOT/'assets'/dns['probe']).read_bytes()
+    assert len(probe)==dns['probe_bytes'] and sha(probe)==dns['probe_sha256']
     for name, info in catalog['libraries'].items():
         b = (ROOT/'assets'/name).read_bytes()
         assert len(b) == info['bytes'] and sha(b) == info['sha256']
@@ -69,6 +76,8 @@ def run(args):
                         assert version.strip() == catalog['firmware'], 'Firmware mismatch'
                         assert readonly(t), '/usr must initially be read-only'
                         assert digest(t,'/usr/lib/libSysDef.so') == catalog['native_sysdef_md5'], 'Unexpected inhibit table'
+                        for path,info in catalog['dns_runtime']['required_native'].items():
+                            if digest(t,path)!=info['md5']:raise RuntimeError('DNS resolver ABI mismatch: '+path)
                         actual = {target:digest(t,target) for target in sorted({v['target'] for v in catalog['variants']})}
                         selected = select(catalog,actual)
                         missing = []
@@ -104,6 +113,16 @@ def run(args):
                         t.run('zp_parent && zp_owned && chmod 700 '+helper)
                         try:
                             remotes=[]
+                            dns=catalog['dns_runtime'];dns_remote=stage+'/'+dns['probe']
+                            dns_payload=(ROOT/'assets'/dns['probe']).read_bytes()
+                            assert sha(dns_payload)==dns['probe_sha256']
+                            cam.writeFile(dns_remote,dns_payload)
+                            with file_read_receiver(cam,{},len(dns_payload)+1024):assert cam.readFile(dns_remote)==dns_payload
+                            t.run('zp_parent && zp_owned && chmod 700 '+dns_remote)
+                            def verify_dns_loader():
+                                code,out=t.run('zp_parent && zp_owned && (ulimit -c 0; '+dns_remote+' --module-only)',check=False)
+                                if code or 'NSS_DNS_LOAD_OK' not in out:raise RuntimeError('DNS module loading failed')
+                                report['dns_module_load_verified']=True
                             for v in selected:
                                 path=v['target']; name=Path(path).name
                                 with file_read_receiver(cam,{},64*1024*1024): data=cam.readFile(path)
@@ -138,6 +157,7 @@ def run(args):
                                         _,out=t.run(remote+' '+v['target']+' apply');assert 'LIFE_APPLIED' in out
                                         assert digest(t,v['target'])==v['candidate_md5']
                                         report['patched'].append(v['name']);save()
+                                    verify_dns_loader()
                                     assert all(cam.readBackup(k)==b for k,b in protected.items()), 'Settings changed'
                                     changed=True
                                 except Exception as error:
@@ -153,13 +173,14 @@ def run(args):
                                     t.run('/bin/busybox sync',check=False)
                                     t.run('/bin/busybox mount -o remount,ro /usr',check=False)
                             assert readonly(t)
-                            for v in catalog['variants']:assert digest(t,v['target'])==v['candidate_md5']
+                            for v in final_variants(catalog):assert digest(t,v['target'])==v['candidate_md5']
                             for name,info in catalog['libraries'].items():assert digest(t,'/usr/lib/'+name)==info['md5']
+                            if not changed:verify_dns_loader()
                             if args.verify or not changed:
                                 _,out=t.run('for p in /proc/[0-9]*; do if [ -r "$p/comm" ]; then read n < "$p/comm"; if [ "$n" = im.elf ]; then echo MAIN=$p; fi; fi; done')
                                 pid=int(re.search(r'MAIN=/proc/(\d+)',out)[1])
                                 _,maps=t.run('/bin/busybox cat /proc/%d/maps'%pid)
-                                for v in {x['target']:x for x in catalog['variants'] if x['name'].endswith('_native')}.values():
+                                for v in final_variants(catalog):
                                     matches=[x for x in maps.splitlines() if x.split()[-1]==v['target'] and x.split()[2]=='00000000']
                                     if not matches:
                                         if v['target']!='/usr/lib/viewUnified4.so':raise RuntimeError('Expected module missing: '+v['target'])

@@ -1,12 +1,12 @@
 # File read limit audit
 
-This is an offline code/resource audit, not an on-camera test. All four operations and the auxiliary readers were inspected.
+This is an offline code/resource audit, not an on-camera test. All five operations and the auxiliary readers were inspected.
 
 | Reader | Limit | Evidence / result |
 | --- | --- | --- |
 | Installation / restore: full system modules | 64 MiB | All captured supported module backups are smaller; maximum listed below |
 | Uploaded patch/probe helpers | Actual file size + 1024 bytes | Sized from the exact helper blob, not a fixed 64 KiB cap |
-| Restore: four added dependency libraries | 1 MiB | Largest dependency is 364820 bytes |
+| Restore: five added dependency libraries | 1 MiB | Largest dependency is 364820 bytes |
 | Configuration: native cipher helper | Actual file size + 1024 bytes | Rebuilt 4636-byte helper; exact payload and hash are checked |
 | Configuration: encrypted batch | 2048 bytes | 1024-byte expected output; final exact length also checked |
 | Reported version record | 4096 bytes | Expected record is 2 bytes; record length checked |

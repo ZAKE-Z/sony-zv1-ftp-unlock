@@ -6,6 +6,18 @@ Unlocks FTP on a Sony ZV-1 by replacing **View on TV** and applying initializati
 
 **Experimental, tested on one owner's camera only. There is currently no proven way to return every setting and file to a perfectly untouched factory state. Firmware reinstall, camera initialization and this project's restore operation can each leave detectable changes. Use with care and only if you accept that limitation.** Supported firmware: `29114_04.2021031701`. Earlier revisions connected and transferred photos successfully; the latest menu/input changes and the refactored install/restore/version workflows do not have complete on-camera validation. See [known issues](docs/KNOWN_ISSUES.md).
 
+
+## DNS repair (2026-10-17)
+
+FTP domain-name resolution and the native Wi-Fi DNS fields were confirmed working by the owner after this repair on ZV-1 2.01.
+
+- Unlock now adds the missing `libnss_dns.so.2` resolver module, extracted from the **a7C 2.00** system partition. ZV-1 and this donor have byte-identical libc/libresolv. The firmware downloads are unchanged; no Sony libraries are shipped in this repository.
+- The Wi-Fi access-point IP settings page now includes primary/secondary DNS using the existing native display, editing, save and navigation paths. Automatic IP follows the native automatic-DNS behavior; manual IP offers DNS entry. No fixed DNS addresses or Wi-Fi profiles are written by the installer.
+- **Existing users:** keep both exact donor EXEs in `firmware/`, rerun entry **1**, then **2**. The previous hash-matched FTP installation upgrades without clearing server profiles. Entry **3** is needed only to change FTP server configuration.
+- Entry **4** supports both the previous and current installations, restores the stock UI and removes the added DNS module along with the other added libraries. It clears FTP configuration and retains Wi-Fi settings, including any DNS values you entered; it is not a full factory reset.
+
+The owner's DNS-page and FTP-domain/transfer confirmation covers one camera and network. Fresh stock-to-final installation and the expanded restore paths have offline tests; they have not each been rerun end-to-end on a freshly reset camera. [DNS details](docs/DNS.md).
+
 ## Prepare
 
 1. Install ordinary **64-bit Python 3.10+** (3.12 recommended), with Python available on PATH. There is no bundled `runtime/python.exe` or `site-packages/`. Entry scripts install missing dependencies with the same interpreter's pip. You can instead run `python -m pip install -r scripts/requirements.txt`, or `python scripts/setup_environment.py`.
@@ -38,7 +50,7 @@ The tool does not enable FTP or alter Wi-Fi/USB settings. The wired/wireless opt
 
 ## Known limitations and privacy
 
-When FTP is first enabled, manually entering or confirming the server IP address and port may fail; this occurred often in early testing. The input sometimes starts working later for reasons not yet understood. If it remains unusable, edit `ftp_config.json` and run step 3 to write the server address and port. In-camera username and password entry worked in earlier tests. Menu navigation and input protection still need more on-camera verification. Keep other camera modification programs closed.
+After FTP is first enabled, entering or confirming the server IP address and port on the camera may fail. The latest owner test found a workaround: attempt to connect to an FTP server once. Even if that connection attempt fails, the IP address can then be edited on the camera. The reason is not yet understood; further input-page patching is deferred. If entry remains unusable, edit `ftp_config.json` and run step 3 to write the server address and port. In-camera username and password entry worked in earlier tests. Keep other camera modification programs closed.
 
 `logs/` contains original firmware and private settings; never upload it. Downloaded EXEs and locally generated Sony libraries are Git-ignored. No Sony firmware/library binary, Python runtime, personal configuration or old reverse-engineering dump is included in the rebuilt repository.
 
